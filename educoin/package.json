@@ -1,0 +1,16 @@
+{
+  "name": "educoin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:all": "npm run install:server && npm run install:client",
+    "db:migrate": "cd server && npx prisma migrate dev --schema=../prisma/schema.prisma",
+    "db:seed": "cd server && node ../prisma/seed.js",
+    "db:generate": "npx prisma generate --schema=prisma/schema.prisma"
+  },
+  "workspaces": ["client", "server"]
+}

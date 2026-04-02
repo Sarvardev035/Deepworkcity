@@ -1,0 +1,9 @@
+2026-04-02 12:52:27.263 +05 [5] LOG:  starting PostgreSQL 16.13 (Ubuntu 16.13-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-04-02 12:52:27.263 +05 [5] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-04-02 12:52:27.539 +05 [5] FATAL:  could not create lock file "/var/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2026-04-02 12:52:27.545 +05 [5] LOG:  database system is shut down
+2026-04-02 12:52:58.324 +05 [6] LOG:  starting PostgreSQL 16.13 (Ubuntu 16.13-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-04-02 12:52:58.324 +05 [6] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-04-02 12:52:58.699 +05 [6] LOG:  listening on Unix socket "/home/sarvarbek/asl_translator/deepworkcity/pgrun/.s.PGSQL.5432"
+2026-04-02 12:52:59.037 +05 [9] LOG:  database system was shut down at 2026-04-02 12:52:15 +05
+2026-04-02 12:52:59.230 +05 [6] LOG:  database system is ready to accept connections

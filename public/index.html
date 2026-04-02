@@ -3508,6 +3508,9 @@ function showScreen(name) {
   const el = document.getElementById('screen-' + name);
   if(el) el.classList.add('active');
   APP.screen = name;
+  if(name === 'landing') {
+    setTimeout(() => { initLandingCanvas(); renderLandingCity(); }, 0);
+  }
   if(name === 'dashboard') {
     setTimeout(() => {
       initMainCanvas();
@@ -4378,6 +4381,7 @@ function stopAmbientSound() {
 let mainCanvas, mainCtx;
 let landingCanvas, landingCtx;
 let cityAnimFrame = null;
+let landingCityRafId = null;
 let animT = 0;
 
 function initMainCanvas() {
@@ -4703,15 +4707,16 @@ function stopCityRender() {
 
 function renderLandingCity() {
   if(!landingCanvas) initLandingCanvas();
-  let lt=0;
-  const loop=()=>{
-    lt=Date.now()/1000;
-    if(document.getElementById('screen-landing').classList.contains('active')) {
-      drawCityOnCtx(landingCtx,landingCanvas,0.75,0,0,lt, 350); // show big demo city
-      requestAnimationFrame(loop);
+  if(landingCityRafId != null) return;
+  const loop = () => {
+    landingCityRafId = requestAnimationFrame(loop);
+    const lt = Date.now() / 1000;
+    const land = document.getElementById('screen-landing');
+    if(land && land.classList.contains('active') && landingCtx && landingCanvas && landingCanvas.width > 0) {
+      drawCityOnCtx(landingCtx, landingCanvas, 0.75, 0, 0, lt, 350);
     }
   };
-  loop();
+  landingCityRafId = requestAnimationFrame(loop);
 }
 
 /* ============================================================

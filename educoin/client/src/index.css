@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0F0F13;
+    color: #EAEAEA;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(108, 92, 231, 0.4);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0F0F13;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A2A3A;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6C5CE7;
+  }
+}
+
+@layer components {
+  /* Cards */
+  .card {
+    @apply bg-card rounded-card border border-border p-6 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:bg-card-hover hover:border-primary/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/10;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-btn
+           transition-all duration-200 hover:shadow-lg hover:shadow-primary/30 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-border hover:border-primary/60 text-text font-medium px-6 py-3 rounded-btn
+           transition-all duration-200 hover:bg-primary/10 active:scale-95;
+  }
+
+  .btn-danger {
+    @apply bg-error/10 hover:bg-error/20 border border-error/30 text-error font-semibold px-6 py-3 rounded-btn
+           transition-all duration-200 active:scale-95;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:brightness-110 text-bg font-semibold px-6 py-3 rounded-btn
+           transition-all duration-200 hover:shadow-lg hover:shadow-accent/30 active:scale-95;
+  }
+
+  .btn-icon {
+    @apply p-2 rounded-btn border border-border hover:border-primary/40 hover:bg-primary/10
+           transition-all duration-200 text-muted hover:text-text;
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full bg-bg border border-border rounded-btn px-4 py-3 text-text placeholder-muted
+           focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20
+           transition-all duration-200;
+  }
+
+  .input-error {
+    @apply border-error focus:border-error focus:ring-error/20;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-muted mb-1.5;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary/20 text-primary border border-primary/30;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent/20 text-accent border border-accent/30;
+  }
+
+  .badge-success {
+    @apply badge bg-success/20 text-success border border-success/30;
+  }
+
+  .badge-error {
+    @apply badge bg-error/20 text-error border border-error/30;
+  }
+
+  /* Progress bar */
+  .progress-track {
+    @apply w-full bg-border rounded-full h-2 overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+  }
+
+  /* Skeleton loading */
+  .skeleton {
+    @apply bg-border rounded animate-pulse;
+  }
+
+  /* Nav */
+  .nav-link {
+    @apply flex items-center gap-2 px-3 py-2 rounded-btn text-muted hover:text-text hover:bg-primary/10
+           transition-all duration-200 text-sm font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-primary bg-primary/10;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply card flex flex-col gap-1;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-text;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted font-medium;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.4);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(0, 206, 201, 0.4);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-border my-4;
+  }
+
+  /* Table */
+  .table-row {
+    @apply flex items-center gap-4 px-4 py-3 border-b border-border hover:bg-card-hover transition-colors duration-200;
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4;
+  }
+
+  .modal-content {
+    @apply bg-card border border-border rounded-card p-8 w-full max-w-md shadow-2xl animate-slide-up;
+  }
+}
+
+/* Custom animations */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #1A1A24 25%, #22222F 50%, #1A1A24 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Timer font */
+.timer-display {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* Focus score bar animation */
+@keyframes focusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.focus-bar-active {
+  animation: focusPulse 2s ease-in-out infinite;
+}
+
+/* Coin spin animation */
+@keyframes coinSpin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.coin-spin {
+  animation: coinSpin 1s ease-in-out;
+}
+
+/* Leveled up pulse */
+@keyframes levelUp {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(108, 92, 231, 0.8); }
+  100% { transform: scale(1); }
+}
+
+.level-up-animation {
+  animation: levelUp 0.8s ease-in-out;
+}

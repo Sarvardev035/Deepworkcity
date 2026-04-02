@@ -1,0 +1,1 @@
+/usr/lib/postgresql/16/bin/postgres "-D" "/home/sarvarbek/asl_translator/deepworkcity/pgdata" "-k" "/home/sarvarbek/asl_translator/deepworkcity/pgrun" "-h" "127.0.0.1" "-p" "5432"
