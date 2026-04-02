@@ -12,5 +12,14 @@
     "db:seed": "cd server && node ../prisma/seed.js",
     "db:generate": "npx prisma generate --schema=prisma/schema.prisma"
   },
-  "workspaces": ["client", "server"]
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
+  }
 }
