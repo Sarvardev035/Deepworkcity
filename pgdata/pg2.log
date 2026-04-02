@@ -1,0 +1,5 @@
+2026-04-02 23:24:54.586 +05 [4047] LOG:  invalid value for parameter "lc_messages": "uz_UZ.UTF-8"
+2026-04-02 23:24:54.586 +05 [4047] LOG:  invalid value for parameter "lc_monetary": "uz_UZ.UTF-8"
+2026-04-02 23:24:54.586 +05 [4047] LOG:  invalid value for parameter "lc_numeric": "uz_UZ.UTF-8"
+2026-04-02 23:24:54.586 +05 [4047] LOG:  invalid value for parameter "lc_time": "uz_UZ.UTF-8"
+2026-04-02 23:24:54.586 +05 [4047] FATAL:  configuration file "/home/runner/work/Deepworkcity/Deepworkcity/pgdata/postgresql.conf" contains errors
