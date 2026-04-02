@@ -20,8 +20,8 @@ function ProtectedRoute({ children }) {
 
 function PublicRoute({ children }) {
   const { isAuthenticated, isLoading } = useAuth();
-  if (isLoading) return <LoadingFallback />;
-  if (isAuthenticated) return <Navigate to="/" replace />;
+  // Only redirect if we're sure the user is authenticated (not while loading)
+  if (!isLoading && isAuthenticated) return <Navigate to="/" replace />;
   return children;
 }
 
