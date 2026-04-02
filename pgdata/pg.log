@@ -7,3 +7,12 @@
 2026-04-02 12:52:58.699 +05 [6] LOG:  listening on Unix socket "/home/sarvarbek/asl_translator/deepworkcity/pgrun/.s.PGSQL.5432"
 2026-04-02 12:52:59.037 +05 [9] LOG:  database system was shut down at 2026-04-02 12:52:15 +05
 2026-04-02 12:52:59.230 +05 [6] LOG:  database system is ready to accept connections
+2026-04-02 23:24:44.486 +05 [4036] LOG:  invalid value for parameter "lc_messages": "uz_UZ.UTF-8"
+2026-04-02 23:24:44.486 +05 [4036] LOG:  invalid value for parameter "lc_monetary": "uz_UZ.UTF-8"
+2026-04-02 23:24:44.486 +05 [4036] LOG:  invalid value for parameter "lc_numeric": "uz_UZ.UTF-8"
+2026-04-02 23:24:44.486 +05 [4036] LOG:  invalid value for parameter "lc_time": "uz_UZ.UTF-8"
+2026-04-02 23:24:44.486 +05 [4036] FATAL:  configuration file "/home/runner/work/Deepworkcity/Deepworkcity/pgdata/postgresql.conf" contains errors
+2026-04-02 23:25:26.404 +05 [4096] FATAL:  data directory "/home/runner/work/Deepworkcity/Deepworkcity/pgdata" has invalid permissions
+2026-04-02 23:25:26.404 +05 [4096] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2026-04-02 23:25:39.045 +05 [4111] FATAL:  could not open directory "pg_notify": No such file or directory
+2026-04-02 23:25:39.047 +05 [4111] LOG:  database system is shut down
